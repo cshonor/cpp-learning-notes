@@ -1,58 +1,22 @@
-# C++ 基础与进阶学习仓库
-学习范围：C++ 语法、编码规范、现代 C++ 特性、STL、底层原理、并发编程
+# 学习笔记目录
 
-## 📚 参考书籍
-1. 《C++ Primer 第5版》
-2. 《Effective C++ 第三版》
-3. 《More Effective C++》
-4. 《Effective Modern C++》
-5. 《Effective STL》
-6. 《STL源码剖析》（侯捷）
-7. 《深度探索C++对象模型》
-8. 《C++并发编程实战》
+按推荐阅读顺序整理，笔记与代码对应根目录下各书籍子目录。
 
-## 📖 阅读顺序（推荐）
-1. 通读 **《C++ Primer》**（C++11 入门，打好语法基础）
-2. 研读 **《Effective C++》** → **《More Effective C++》**（传统编码规范）
-3. 学习 **《Effective Modern C++》**（集中攻克 C++11/14 新特性与最佳实践）
-4. 学习 **《Effective STL》** → **《STL源码剖析》** → **《深度探索C++对象模型》**（底层深挖）
-5. 最后学习 **《C++并发编程实战》**（掌握并发、多线程核心）
+| 顺序 | 目录 | 书籍 | 侧重 |
+|------|------|------|------|
+| 1 | [01-C++Primer](./01-C++Primer/) | 《C++ Primer 第5版》 | 语法、标准库基础 |
+| 2 | [02-Effective-C++](./02-Effective-C++/) | 《Effective C++ 第三版》 | 基础编码规范 |
+| 3 | [03-More-Effective-C++](./03-More-Effective-C++/) | 《More Effective C++》 | 进阶语法、设计技巧 |
+| 4 | [04-Effective-Modern-C++](./04-Effective-Modern-C++/) | 《Effective Modern C++》 | 移动语义、lambda、类型推导等现代特性 |
+| 5 | [05-Effective-STL](./05-Effective-STL/) | 《Effective STL》 | STL 最佳实践 |
+| 6 | [06-STL-Source-Analysis](./06-STL-Source-Analysis/) | 《STL源码剖析》 | STL 底层原理 |
+| 7 | [07-Cpp-Object-Model](./07-Cpp-Object-Model/) | 《深度探索C++对象模型》 | 对象内存布局、多态底层 |
+| 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
 
-> 备选顺序：若想先吃透底层再补现代特性，可将 **《Effective Modern C++》** 放在对象模型之后、并发之前集中刷。
+## 学习提示
 
-## 📁 目录说明
-- `docs/`：分书籍整理学习笔记、知识点总结
-- `code/`：配套示例代码、测试案例、实践代码
-- `exercises/`：课后习题、综合练习代码
-
-```
-cpp-learning-notes/
-├── docs/
-│   ├── 01-C++Primer/                # C++ Primer 笔记
-│   ├── 02-Effective-C++/            # Effective C++ 笔记
-│   ├── 03-More-Effective-C++/       # More Effective C++ 笔记
-│   ├── 04-Effective-Modern-C++/     # Effective Modern C++ 笔记
-│   ├── 05-Effective-STL/            # Effective STL 笔记
-│   ├── 06-STL-Source-Analysis/      # STL源码剖析 笔记
-│   ├── 07-Cpp-Object-Model/         # 深度探索C++对象模型 笔记
-│   └── 08-Cpp-Concurrency/          # C++并发编程实战 笔记
-├── code/
-│   ├── primer-demo/                 # Primer 示例&练习
-│   ├── effective-demo/              # Effective 系列正反案例（含 Modern C++）
-│   ├── stl-demo/                    # STL 使用&源码调试代码
-│   ├── object-model-demo/           # 对象模型配套测试代码
-│   └── concurrency-demo/            # 并发编程示例代码
-├── exercises/                       # 综合习题、自测代码
-├── .gitignore
-└── README.md
-```
-
-## 📖 学习进度
-- [ ] C++ Primer 完整学习
-- [ ] Effective C++ 研读
-- [ ] More Effective C++ 研读
-- [ ] Effective Modern C++ 研读
-- [ ] Effective STL 研读
-- [ ] STL源码剖析 研读
-- [ ] 深度探索C++对象模型 研读
-- [ ] C++并发编程实战 研读
+- **经典与现代的衔接**：前序 Effective 系列打好编码基本功后，用《Effective Modern C++》集中补齐 C++11/14；不必因书偏老而跳过底层书，**原理 > 语法版本**。
+- **Modern C++ 重点**：优先掌握移动语义、模板新特性、lambda、类型推导；在 `04-Effective-Modern-C++/` 写示例，理解用法与坑点即可，不必啃得特别慢。
+- **对象模型**：在 `07-Cpp-Object-Model/` 打印类内存大小、成员偏移、虚表结构，直观理解底层布局。
+- **并发编程**：在 `08-Cpp-Concurrency/` 动手写多线程、互斥锁、条件变量、异步代码，纯看书很难吃透。
+- **全程保持**：笔记与代码都写在对应书籍目录下，方便按书复盘。
