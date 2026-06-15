@@ -12,11 +12,26 @@
 | 6 | [06-STL-Source-Analysis](./06-STL-Source-Analysis/) | 《STL源码剖析》 | STL 底层原理 |
 | 7 | [07-Cpp-Object-Model](./07-Cpp-Object-Model/) | 《深度探索C++对象模型》 | 对象内存布局、多态底层 |
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
+| 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
+
+## 学习顺序
+
+1. 先吃透 **04-Effective-Modern-C++**（C++11/14/17），建立现代 C++ 基础认知
+2. 完成 STL、对象模型、并发等底层章节（05–08）
+3. 最后切入 **09-C++20-The-Complete-Guide**，理解 C++20 是对现代 C++ 的升级拓展，避免知识断层
 
 ## 学习提示
 
 - **经典与现代的衔接**：前序 Effective 系列打好编码基本功后，用《Effective Modern C++》集中补齐 C++11/14；不必因书偏老而跳过底层书，**原理 > 语法版本**。
-- **Modern C++ 重点**：优先掌握移动语义、模板新特性、lambda、类型推导；在 `04-Effective-Modern-C++/` 写示例，理解用法与坑点即可，不必啃得特别慢。
+- **Modern C++ 重点**：优先掌握移动语义、模板新特性、lambda、类型推导；在 `04-Effective-Modern-C++/` 写示例，理解用法与坑点即可。
 - **对象模型**：在 `07-Cpp-Object-Model/` 打印类内存大小、成员偏移、虚表结构，直观理解底层布局。
-- **并发编程**：在 `08-Cpp-Concurrency/` 动手写多线程、互斥锁、条件变量、异步代码，纯看书很难吃透。
+- **并发编程**：在 `08-Cpp-Concurrency/` 动手写多线程、互斥锁、条件变量、异步代码；与 C++20 原子/同步增强互补。
+- **C++20 主线**：Josuttis 与 STL 体系一脉相承；重点掌握 Concepts、Modules、Coroutines、Ranges、consteval/constinit。
 - **全程保持**：笔记与代码都写在对应书籍目录下，方便按书复盘。
+
+## 可选拓展（量化 / 低延迟方向）
+
+| 目录（按需追加） | 书籍 | 侧重 |
+|------------------|------|------|
+| `10-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `11-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
