@@ -34,18 +34,18 @@
 
 ## C 语言学习顺序
 
-见 [C/README.md](./C/README.md)：阶段 1（01–04）→ 阶段 2（05 GNU-C）
+见 [C/README.md](./C/README.md)：阶段 1（10–13）→ 阶段 2（14 GNU-C）
 
 ## 学习提示
 
 - **C++ 经典与现代**：Effective 系列 + Modern C++ 衔接；**原理 > 语法版本**
 - **C 与 C++**：先有一定 C++ 基础再切 C 更高效；C 书在 `C/` 目录，服务内核/DPDK 路线
-- **对象模型**：`07-Cpp-Object-Model/` 与 `C/02-Pointers-on-C/` 对照理解内存布局
+- **对象模型**：`07-Cpp-Object-Model/` 与 `C/11-Pointers-on-C/` 对照理解内存布局
 - **全程保持**：笔记与代码写在对应书籍目录下，方便按书复盘
 
 ## 可选拓展（量化 / 低延迟方向）
 
 | 目录（按需追加） | 书籍 | 侧重 |
 |------------------|------|------|
-| `10-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
-| `11-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
+| `15-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `16-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
