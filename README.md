@@ -2,6 +2,8 @@
 
 按推荐阅读顺序整理，笔记与代码对应根目录下各书籍子目录。
 
+## C++ 主线
+
 | 顺序 | 目录 | 书籍 | 侧重 |
 |------|------|------|------|
 | 1 | [01-C++Primer](./01-C++Primer/) | 《C++ Primer 第5版》 | 语法、标准库基础 |
@@ -14,24 +16,35 @@
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
 | 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
-## 学习顺序
+## C 语言（内核 / 底层前置）
+
+| 阶段 | 目录 | 书籍 | 侧重 |
+|------|------|------|------|
+| 1 | [10-K-and-R-C](./10-K-and-R-C/) | 《C 程序设计语言（K&R 第2版）》 | 标准 C、`malloc`/指针/结构体 |
+| 1 | [11-Pointers-on-C](./11-Pointers-on-C/) | 《C 和指针》 | 内存布局、联合体、ABI 基础 |
+| 2 | [12-Embedded-C-Self-Cultivation](./12-Embedded-C-Self-Cultivation/) | 《嵌入式 C 语言自我修养》 | GNU-C 扩展、内核/DPDK 代码必备 |
+
+## C++ 学习顺序
 
 1. 先吃透 **04-Effective-Modern-C++**（C++11/14/17），建立现代 C++ 基础认知
 2. 完成 STL、对象模型、并发等底层章节（05–08）
-3. 最后切入 **09-C++20-The-Complete-Guide**，理解 C++20 是对现代 C++ 的升级拓展，避免知识断层
+3. 最后切入 **09-C++20-The-Complete-Guide**，理解 C++20 是对现代 C++ 的升级拓展
+
+## C 语言学习顺序
+
+1. **阶段 1**：**10-K-and-R-C** → **11-Pointers-on-C**（C++ 思维转纯 C；有 C++ 基础可快速过，重点改写法习惯）
+2. **阶段 2**：**12-Embedded-C-Self-Cultivation**（GNU-C 扩展，读 LKD / 内核 / DPDK 前置）
 
 ## 学习提示
 
-- **经典与现代的衔接**：前序 Effective 系列打好编码基本功后，用《Effective Modern C++》集中补齐 C++11/14；不必因书偏老而跳过底层书，**原理 > 语法版本**。
-- **Modern C++ 重点**：优先掌握移动语义、模板新特性、lambda、类型推导；在 `04-Effective-Modern-C++/` 写示例，理解用法与坑点即可。
-- **对象模型**：在 `07-Cpp-Object-Model/` 打印类内存大小、成员偏移、虚表结构，直观理解底层布局。
-- **并发编程**：在 `08-Cpp-Concurrency/` 动手写多线程、互斥锁、条件变量、异步代码；与 C++20 原子/同步增强互补。
-- **C++20 主线**：Josuttis 与 STL 体系一脉相承；重点掌握 Concepts、Modules、Coroutines、Ranges、consteval/constinit。
-- **全程保持**：笔记与代码都写在对应书籍目录下，方便按书复盘。
+- **C++ 经典与现代**：Effective 系列 + Modern C++ 衔接；**原理 > 语法版本**
+- **C 与 C++**：先有一定 C++ 基础再切 C 更高效；C 书侧重内存模型与 GNU 扩展，服务内核/DPDK 路线
+- **对象模型**：在 `07-Cpp-Object-Model/` 打印类内存大小、虚表，与 `11-Pointers-on-C/` 对照理解
+- **全程保持**：笔记与代码写在对应书籍目录下，方便按书复盘
 
 ## 可选拓展（量化 / 低延迟方向）
 
 | 目录（按需追加） | 书籍 | 侧重 |
 |------------------|------|------|
-| `10-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
-| `11-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
+| `13-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `14-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
