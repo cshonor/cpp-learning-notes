@@ -3,3 +3,14 @@
 ## 本节讲什么
 
 智能指针提供 `get()`，封装类对外暴露底层资源，兼容老 API 调用。
+
+## 示例
+
+```cpp
+class Font {
+    std::shared_ptr<FontHandle> fh;
+public:
+    FontHandle *get() const { return fh.get(); }
+    FontHandle &operator*() const { return *fh; }
+};
+```

@@ -3,3 +3,10 @@
 ## 本节讲什么
 
 值传递会完整拷贝构造 + 析构，开销大；引用避免拷贝，`const` 保证不修改入参。
+
+## 示例
+
+```cpp
+void print(const std::string &s);  // 好：避免拷贝
+// void print(std::string s);      // 差：每次传参都拷贝
+```

@@ -3,3 +3,13 @@
 ## 本节讲什么
 
 `a = a` 场景，先判等，或者先拷贝新资源再释放旧资源，防止释放已销毁内存。
+
+## 示例
+
+```cpp
+Widget &Widget::operator=(const Widget &rhs) {
+    if (this == &rhs) return *this;
+    // 释放旧资源，复制新资源
+    return *this;
+}
+```

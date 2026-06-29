@@ -3,3 +3,11 @@
 ## 本节讲什么
 
 通过基类指针删除派生类对象时，基类析构非虚会只调用基类析构，内存泄漏；普通非多态基类不要加 `virtual`，增加开销。
+
+## 示例
+
+```cpp
+class Base { public: virtual ~Base() = default; };
+class Derived : public Base {};
+void deleteViaBase(Base *p) { delete p; }  // 需要虚析构
+```
