@@ -2,7 +2,7 @@
 
 按推荐阅读顺序整理，笔记与代码对应根目录下各书籍子目录。
 
-## C++ 主线
+## C++ 主线（01–09）
 
 | 顺序 | 目录 | 书籍 | 侧重 |
 |------|------|------|------|
@@ -16,15 +16,13 @@
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
 | 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
-## C 语言（内核 / 底层前置）
+## C 语言 · Linux 内核 / DPDK / 网络服务（10）
 
-全部 5 本书在 **[C/](./C/)** 目录下：
+| 顺序 | 目录 | 说明 |
+|------|------|------|
+| 10 | [10-Linux-Kernel-DPDK-Network-C](./10-Linux-Kernel-DPDK-Network-C/) | 5 本 C 书（内部分 `01–05`），面向内核、DPDK、Linux 网络服务 |
 
-| 目录 | 说明 |
-|------|------|
-| [C/](./C/) | K&R、《C 和指针》、陷阱与缺陷、专家编程、嵌入式 C 自我修养 |
-
-详见 [C/README.md](./C/README.md)。
+详见 [10-Linux-Kernel-DPDK-Network-C/README.md](./10-Linux-Kernel-DPDK-Network-C/README.md)。
 
 ## C++ 学习顺序
 
@@ -34,18 +32,18 @@
 
 ## C 语言学习顺序
 
-见 [C/README.md](./C/README.md)：阶段 1（10–13）→ 阶段 2（14 GNU-C）
+见 **10-Linux-Kernel-DPDK-Network-C**：阶段 1（01–04）→ 阶段 2（05 GNU-C）→ 内核 / DPDK / 网络源码
 
 ## 学习提示
 
 - **C++ 经典与现代**：Effective 系列 + Modern C++ 衔接；**原理 > 语法版本**
-- **C 与 C++**：先有一定 C++ 基础再切 C 更高效；C 书在 `C/` 目录，服务内核/DPDK 路线
-- **对象模型**：`07-Cpp-Object-Model/` 与 `C/11-Pointers-on-C/` 对照理解内存布局
+- **C 的定位**：为 Linux 内核、DPDK、网络数据面服务；有 C++ 基础后再学 C 更高效
+- **对象模型**：`07-Cpp-Object-Model/` 与 `10-.../02-Pointers-on-C/` 对照理解内存布局
 - **全程保持**：笔记与代码写在对应书籍目录下，方便按书复盘
 
 ## 可选拓展（量化 / 低延迟方向）
 
 | 目录（按需追加） | 书籍 | 侧重 |
 |------------------|------|------|
-| `15-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
-| `16-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
+| `11-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `12-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
