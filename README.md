@@ -16,13 +16,15 @@
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
 | 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
-## C 语言（内核 / 底层前置）
+## C 语言（内核 / 底层前置，共 5 本）
 
 | 阶段 | 目录 | 书籍 | 侧重 |
 |------|------|------|------|
 | 1 | [10-K-and-R-C](./10-K-and-R-C/) | 《C 程序设计语言（K&R 第2版）》 | 标准 C、`malloc`/指针/结构体 |
 | 1 | [11-Pointers-on-C](./11-Pointers-on-C/) | 《C 和指针》 | 内存布局、联合体、ABI 基础 |
-| 2 | [12-Embedded-C-Self-Cultivation](./12-Embedded-C-Self-Cultivation/) | 《嵌入式 C 语言自我修养》 | GNU-C 扩展、内核/DPDK 代码必备 |
+| 1 | [12-C-Traps-and-Pitfalls](./12-C-Traps-and-Pitfalls/) | 《C 陷阱与缺陷（第2版）》 | 宏、链接、库函数等常见陷阱 |
+| 1 | [13-Expert-C-Programming](./13-Expert-C-Programming/) | 《C 专家编程》 | 链接器、深层指针规则、C 设计内幕 |
+| 2 | [14-Embedded-C-Self-Cultivation](./14-Embedded-C-Self-Cultivation/) | 《嵌入式 C 语言自我修养》 | GNU-C 扩展、内核/DPDK 代码必备 |
 
 ## C++ 学习顺序
 
@@ -32,8 +34,8 @@
 
 ## C 语言学习顺序
 
-1. **阶段 1**：**10-K-and-R-C** → **11-Pointers-on-C**（C++ 思维转纯 C；有 C++ 基础可快速过，重点改写法习惯）
-2. **阶段 2**：**12-Embedded-C-Self-Cultivation**（GNU-C 扩展，读 LKD / 内核 / DPDK 前置）
+1. **阶段 1**（C++ 思维 → 纯 C）：**10** → **11** → **12** → **13**（有 C++ 基础可快读，重点改写法习惯）
+2. **阶段 2**（GNU-C / 内核）：**14-Embedded-C-Self-Cultivation**（读 LKD / 内核 / DPDK 前置）
 
 ## 学习提示
 
@@ -46,5 +48,5 @@
 
 | 目录（按需追加） | 书籍 | 侧重 |
 |------------------|------|------|
-| `13-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
-| `14-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
+| `15-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `16-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
