@@ -16,15 +16,15 @@
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
 | 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
-## C 语言（内核 / 底层前置，共 5 本）
+## C 语言（内核 / 底层前置）
 
-| 阶段 | 目录 | 书籍 | 侧重 |
-|------|------|------|------|
-| 1 | [10-K-and-R-C](./10-K-and-R-C/) | 《C 程序设计语言（K&R 第2版）》 | 标准 C、`malloc`/指针/结构体 |
-| 1 | [11-Pointers-on-C](./11-Pointers-on-C/) | 《C 和指针》 | 内存布局、联合体、ABI 基础 |
-| 1 | [12-C-Traps-and-Pitfalls](./12-C-Traps-and-Pitfalls/) | 《C 陷阱与缺陷（第2版）》 | 宏、链接、库函数等常见陷阱 |
-| 1 | [13-Expert-C-Programming](./13-Expert-C-Programming/) | 《C 专家编程》 | 链接器、深层指针规则、C 设计内幕 |
-| 2 | [14-Embedded-C-Self-Cultivation](./14-Embedded-C-Self-Cultivation/) | 《嵌入式 C 语言自我修养》 | GNU-C 扩展、内核/DPDK 代码必备 |
+全部 5 本书在 **[C/](./C/)** 目录下：
+
+| 目录 | 说明 |
+|------|------|
+| [C/](./C/) | K&R、《C 和指针》、陷阱与缺陷、专家编程、嵌入式 C 自我修养 |
+
+详见 [C/README.md](./C/README.md)。
 
 ## C++ 学习顺序
 
@@ -34,19 +34,18 @@
 
 ## C 语言学习顺序
 
-1. **阶段 1**（C++ 思维 → 纯 C）：**10** → **11** → **12** → **13**（有 C++ 基础可快读，重点改写法习惯）
-2. **阶段 2**（GNU-C / 内核）：**14-Embedded-C-Self-Cultivation**（读 LKD / 内核 / DPDK 前置）
+见 [C/README.md](./C/README.md)：阶段 1（01–04）→ 阶段 2（05 GNU-C）
 
 ## 学习提示
 
 - **C++ 经典与现代**：Effective 系列 + Modern C++ 衔接；**原理 > 语法版本**
-- **C 与 C++**：先有一定 C++ 基础再切 C 更高效；C 书侧重内存模型与 GNU 扩展，服务内核/DPDK 路线
-- **对象模型**：在 `07-Cpp-Object-Model/` 打印类内存大小、虚表，与 `11-Pointers-on-C/` 对照理解
+- **C 与 C++**：先有一定 C++ 基础再切 C 更高效；C 书在 `C/` 目录，服务内核/DPDK 路线
+- **对象模型**：`07-Cpp-Object-Model/` 与 `C/02-Pointers-on-C/` 对照理解内存布局
 - **全程保持**：笔记与代码写在对应书籍目录下，方便按书复盘
 
 ## 可选拓展（量化 / 低延迟方向）
 
 | 目录（按需追加） | 书籍 | 侧重 |
 |------------------|------|------|
-| `15-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
-| `16-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
+| `10-Practical-C++20-Financial-Programming` | 《Practical C++20 Financial Programming》 | 金融量化 C++20 实战 |
+| `11-Modern-C++-Performance-Engineering` | 《Modern C++ Performance Engineering》 | C++17/20 低延迟、无锁、CPU 优化 |
