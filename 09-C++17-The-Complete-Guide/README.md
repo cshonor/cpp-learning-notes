@@ -1,6 +1,6 @@
 # 《C++17 - The Complete Guide》章节索引
 
-> Nicolai Josuttis 著，与 [09-C++20-The-Complete-Guide](../09-C++20-The-Complete-Guide/) 同作者。**08 并发 → 08.5 C++17 → 09 C++20** 按版本递进，C++17 是 HFT 技术栈里大量「现代特性」的过渡基线。
+> Nicolai Josuttis 著，与 [10-C++20-The-Complete-Guide](../10-C++20-The-Complete-Guide/) 同作者。**08 并发 → 09 C++17 → 10 C++20** 按版本递进，C++17 是 HFT 技术栈里大量「现代特性」的过渡基线。
 
 ## 为什么插在 08 与 09 之间
 
@@ -75,7 +75,7 @@
 1. **语言层速通**：1（结构化绑定）→ 2 → 6 → 9–11（CTAD / `if constexpr` / 折叠表达式）
 2. **HFT 高频库**：19（`string_view`）→ 22（并行 STL，配合 08）→ 31（`to_chars`）→ 29（PMR）
 3. **类型安全与配置**：15–17（`optional` / `variant` / `any`）→ 20（filesystem 配置/日志路径）
-4. **收尾**：34（`-std=c++17` 等设置）→ 35（弃用特性）→ 进入 [09 C++20](../09-C++20-The-Complete-Guide/)
+4. **收尾**：34（`-std=c++17` 等设置）→ 35（弃用特性）→ 进入 [10 C++20](../10-C++20-The-Complete-Guide/)
 
 ## 学习进度
 
