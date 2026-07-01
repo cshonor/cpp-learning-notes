@@ -2,7 +2,7 @@
 
 按推荐阅读顺序整理，笔记与代码对应根目录下各书籍子目录。
 
-## C++ 主线（01–09）
+## C++ 主线（01–09，含 08.5）
 
 | 顺序 | 目录 | 书籍 | 侧重 |
 |------|------|------|------|
@@ -14,6 +14,7 @@
 | 6 | [06-STL-Source-Analysis](./06-STL-Source-Analysis/) | 《STL源码剖析》 | STL 底层原理 |
 | 7 | [07-Cpp-Object-Model](./07-Cpp-Object-Model/) | 《深度探索C++对象模型》 | 对象内存布局、多态底层 |
 | 8 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 《C++并发编程实战》 | 线程、同步、内存模型 |
+| 8.5 | [08.5-C++17-The-Complete-Guide](./08.5-C++17-The-Complete-Guide/) | 《C++17 - The Complete Guide》（Josuttis） | 结构化绑定、折叠表达式、并行 STL、`string_view` 等 C++17 过渡特性 |
 | 9 | [09-C++20-The-Complete-Guide](./09-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
 ## C 语言 · Linux 内核 / DPDK / 网络服务（10）
@@ -28,7 +29,8 @@
 
 1. 先吃透 **04-Effective-Modern-C++**（C++11/14/17），建立现代 C++ 基础认知
 2. 完成 STL、对象模型、并发等底层章节（05–08）
-3. 最后切入 **09-C++20-The-Complete-Guide**，理解 C++20 是对现代 C++ 的升级拓展
+3. 读 **08.5-C++17-The-Complete-Guide**：结构化绑定、折叠表达式、并行 STL、`string_view` 等——HFT 技术栈里 17→20 的过渡基线
+4. 最后切入 **09-C++20-The-Complete-Guide**，理解 C++20 是对 C++17 的升级拓展（Concepts、Ranges、Coroutines 等）
 
 ## C 语言学习顺序
 
