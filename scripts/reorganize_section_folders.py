@@ -13,7 +13,7 @@ PRIMER = ROOT / "01-C++Primer"
 SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     (
         "ch01-getting-started",
-        "1.5-类简介",
+        "1.5-a-brief-introduction-to-classes",
         [
             "1.5-类简介.md",
             "1.5.1-类的使用与头文件分离.md",
@@ -22,7 +22,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch02-variables-and-basic-types",
-        "2.2-变量",
+        "2.2-variables",
         [
             "2.2-变量.md",
             "2.2.1-标识符与未初始化.md",
@@ -33,7 +33,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch02-variables-and-basic-types",
-        "2.3-复合类型",
+        "2.3-compound-types",
         [
             "2.3-复合类型.md",
             "2.3.1-引用.md",
@@ -42,7 +42,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch02-variables-and-basic-types",
-        "2.4-const限定符",
+        "2.4-const-qualifier",
         [
             "2.4-const限定符.md",
             "2.4.1-const基础与constexpr.md",
@@ -52,7 +52,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch02-variables-and-basic-types",
-        "2.6-自定义数据结构",
+        "2.6-custom-data-structures",
         [
             "2.6-自定义数据结构.md",
             "2.6.1-Sales_data入门与聚合.md",
@@ -64,7 +64,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch03-strings-vectors-arrays",
-        "3.2-标准库类型string",
+        "3.2-library-type-string",
         [
             "3.2-标准库类型string.md",
             "3.2.1-定义与初始化.md",
@@ -77,7 +77,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch03-strings-vectors-arrays",
-        "3.3-标准库类型vector",
+        "3.3-library-type-vector",
         [
             "3.3-标准库类型vector.md",
             "3.3.1-动态数组基础.md",
@@ -90,7 +90,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch03-strings-vectors-arrays",
-        "3.4-迭代器介绍",
+        "3.4-introducing-iterators",
         [
             "3.4-迭代器介绍.md",
             "3.4.1-为何需要迭代器.md",
@@ -102,7 +102,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch03-strings-vectors-arrays",
-        "3.5-数组",
+        "3.5-arrays",
         [
             "3.5-数组.md",
             "3.5.1-定义与初始化.md",
@@ -114,7 +114,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch04-expressions",
-        "4.2-4.10各种运算符详解",
+        "4.2-4.10-operators",
         [
             "4.2-4.10各种运算符详解.md",
             "4.2-算术运算符.md",
@@ -130,7 +130,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch04-expressions",
-        "4.11-类型转换",
+        "4.11-type-conversions",
         [
             "4.11-类型转换.md",
             "4.11.1-隐式类型转换.md",
@@ -140,7 +140,7 @@ SECTION_FOLDERS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "ch04-expressions",
-        "4.12-运算符优先级表",
+        "4.12-operator-precedence",
         [
             "4.12-运算符优先级表.md",
             "4.12.1-优先级与结合律表.md",
