@@ -1,12 +1,25 @@
 # 第 3 章 控制流
 
+**Control Flow**
+
+## 本章讲什么
+
+程序的分支、循环与跳转：**纯流程语法**，不涉及内存布局与指针。写内核调度、行情循环、飞控主循环，都建立在本章之上。
+
+## 学习重点
+
+- **`else` 就近匹配**、**`switch` 穿透** —— C 笔试与读遗留代码的高频坑
+- **`while` / `for` 等价转换** —— 遍历与计数两种写法互换
+- **`break` / `continue` / `goto`** —— 尤其内核里 `goto` 错误处理与多层循环退出
+- 本章难度低于第 2、5 章，可快速过一遍，但上述考点需记牢
+
 ## 小节
 
 - [3.1 语句与程序块](./3.1-语句与程序块.md)
-- [3.2 if-else语句](./3.2-if-else语句.md)
-- [3.3 else-if语句](./3.3-else-if语句.md)
-- [3.4 switch语句](./3.4-switch语句.md)
-- [3.5 while循环与for循环](./3.5-while循环与for循环.md)
-- [3.6 do-while循环](./3.6-do-while循环.md)
-- [3.7 break语句与continue语句](./3.7-break语句与continue语句.md)
-- [3.8 goto语句与标号](./3.8-goto语句与标号.md)
+- [3.2 if-else 语句](./3.2-if-else语句.md)
+- [3.3 else-if 多分支结构](./3.3-else-if语句.md)
+- [3.4 switch 语句](./3.4-switch语句.md)
+- [3.5 while 循环与 for 循环](./3.5-while循环与for循环.md)
+- [3.6 do-while 循环](./3.6-do-while循环.md)
+- [3.7 break 与 continue](./3.7-break语句与continue语句.md)
+- [3.8 goto 语句与标号](./3.8-goto语句与标号.md)
