@@ -29,28 +29,28 @@ cd 11-Linux-Kernel-DPDK-Network-C/05-Embedded-C-Self-Cultivation/ch06-gnu-c-exte
 make all
 
 # packed 布局与 sizeof
-./demo01_packed
+./demo01_packed_struct
+gdb -batch -ex run -ex 'x/16xb &p' ./demo01_packed_struct
 
 # section 符号与段
-./demo02_section
-readelf -S demo02_section
-nm demo02_section | grep -E 'init|boot|early'
+readelf -S demo02_custom_section | grep my_
+nm demo02_custom_section | grep g_custom
 
-# weak 覆盖
-./demo03_weak_default
-./demo03_weak_board
+# weak 默认 vs 强符号覆盖
+./demo03_weak
+./demo03_weak_override
 
 # constructor 先于 main
 ./demo04_constructor
 
 # 零长度数组 / FAM
-./demo05_flex_array
+./demo05_flexible_array
 
-# 日志宏 + format 检查
-gcc -Wall -Wformat=2 -o demo06 demo06_log_macro.c && ./demo06
+# 日志宏 + 语句表达式 MAX
+./demo06_log_macro
 
-# 内联汇编读寄存器（ARM 示例视平台而定）
-./demo07_register_asm
+# 内嵌汇编读计数器（x86_64 / AArch64）
+./demo07_reg_asm
 
 make clean
 ```
@@ -76,7 +76,7 @@ make clean
 | **demo04** | `constructor` 初始化顺序 | **6.6.1** |
 | **demo05** | 零长度数组动态分配 | **6.5.2** |
 | **demo06** | 日志宏 + `format` | **6.8.3**、**6.12** |
-| **demo07** | `register` + `asm` 读 CPSR | **6.11.2**、**6.6.1** |
+| **demo07** | 内嵌汇编 / 寄存器约束 | **6.11.2**、ch03 汇编 |
 
 ## 考核要点
 
