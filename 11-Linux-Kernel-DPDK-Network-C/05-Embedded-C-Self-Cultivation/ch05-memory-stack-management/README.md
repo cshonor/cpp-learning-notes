@@ -37,6 +37,10 @@ cat /proc/self/maps | head
 # ARM/x86 栈帧 + GDB
 gdb -batch -ex 'break recurse' -ex run -ex bt -ex 'info reg sp fp lr' ./demo02_stack_frame
 
+# 栈溢出（见 demo/README 完整 GDB 步骤）
+make demo03_stack_overflow CFLAGS="-g -O0 -Wall -fno-stack-protector"
+gdb -batch -ex 'break smash_frame' -ex run -ex 'info reg sp lr' -ex continue -ex bt ./demo03_stack_overflow
+
 # 静态局部 vs 栈局部
 ./demo05_static
 
@@ -63,7 +67,7 @@ make clean
 |------|------|----------|
 | **demo01** | 五段地址打印 | **5.1**、**5.2** |
 | **demo02** | 递归栈帧 + GDB | **5.3.2**、**5.3.3** |
-| **demo03** | 栈溢出观察（见 demo/README，慎用） | **5.3.6**、**5.7.2** |
+| **demo03** | 栈溢出 + GDB（越界/递归） | **5.3.6**、**5.7.2** |
 | **demo04** | 故意堆泄漏 | **5.4.3**、**5.6.1**、**5.7.5** |
 | **demo05** | 静态局部 vs 局部 | **5.3.5** |
 | **demo06** | 工具链合练：`maps`/`mtrace`/core（命令行） | **5.2**、**5.6.3**、**5.7.2** |
