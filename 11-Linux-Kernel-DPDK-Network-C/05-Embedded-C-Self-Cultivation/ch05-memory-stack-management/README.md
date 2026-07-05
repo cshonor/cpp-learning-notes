@@ -1,5 +1,101 @@
 # 第 5 章 内存堆栈管理
 
+**Memory and Stack Management**
+
+## 本章目标
+
+建立 **进程五段 + heap/stack** 与 **Linux VMA** 的完整图景；掌握 **ARM 栈帧**（`push`/`bl`/`ldmfd`、`FP/LR/SP`）与 **GDB `bt`/`x`**；理解 **glibc chunk/碎片/泄漏** 及裸机/RTOS 堆；会用 **mmap** 映射文件与 **MMIO**；熟练 **Valgrind/mtrace/core dump/ASAN** 查内存错误。衔接 **ch04 ELF**、**LKD 虚拟内存**、**DPDK hugepage/mempool**。
+
+## 前置依赖
+
+| 章节 | 内容 |
+|------|------|
+| **[ch01](../ch01-tools-of-the-trade/)** | `gcc`、`gdb`、`make` |
+| **[ch03](../ch03-arm-architecture-and-assembly/)** | AAPCS、`push`/`pop`、`bl`、`objdump -dS` |
+| **[ch04](../ch04-compile-link-install-run/)** | ELF `.text/.data/.bss`、`execve`、BSS、动态库 |
+
+## 环境
+
+- **主机**：`gcc -g`、GDB、**binutils**（`size`、`readelf`、`nm`）
+- **检测**：`valgrind`、`libc` **mtrace**（`apt install glibc-tools` 或自带）
+- **拓展**：`-fsanitize=address`、ARM 交叉 GDB
+- **demo/**：见下（勿改 demo 源码）
+
+## 快速操作 Demo
+
+```bash
+cd 11-Linux-Kernel-DPDK-Network-C/05-Embedded-C-Self-Cultivation/ch05-memory-stack-management/demo
+
+make all
+size demo01_memory_zone demo02_stack_frame demo05_static
+
+# 五段地址
+./demo01_memory_zone
+readelf -S demo01_memory_zone | grep -E 'text|rodata|data|bss'
+cat /proc/self/maps | head
+
+# ARM/x86 栈帧 + GDB
+gdb -batch -ex 'break recurse' -ex run -ex bt -ex 'info reg sp fp lr' ./demo02_stack_frame
+
+# 静态局部 vs 栈局部
+./demo05_static
+
+# 泄漏 + Valgrind
+valgrind --leak-check=full --show-leak-kinds=all ./demo04_heap_leak
+
+make clean
+```
+
+## 六大知识模块
+
+| 模块 | 目录 | 核心 |
+|------|------|------|
+| **1 五段与进程** | **5.1**、**5.2** | `.text/.rodata/.data/.bss/heap/stack`；VMA、`/proc/maps`；衔接 **ch04 ELF** |
+| **2 栈与调用** | **5.3.*** | 栈初始化；**5.3.2** `stmfd`/`ldmfd`、`bl`/`LR`、栈帧；传参/形实参；**GDB `bt`/`x`** |
+| **3 堆管理** | **5.4.*** | 裸机/uC/OS/glibc **chunk**；碎片；**5.4.5** 自研堆；**5.4.1** vs **5.2** MMU |
+| **4 作用域与静态** | **5.3.5** | 静态局部 → `.bss/.data`；自动变量 → 栈 |
+| **5 溢出与 mmap** | **5.3.6**、**5.5.***、**5.7.*** | canary/ASAN；**mmap** 文件/**MMIO**；共享 `.so` |
+| **6 泄漏与检测** | **5.6.***、**5.7.2**、**5.7.5** | 泄漏/mtrace；**core dump**；**Valgrind**；mprotect guard |
+
+## Demo 清单
+
+| Demo | 内容 | 对应小节 |
+|------|------|----------|
+| **demo01** | 五段地址打印 | **5.1**、**5.2** |
+| **demo02** | 递归栈帧 + GDB | **5.3.2**、**5.3.3** |
+| **demo03** | 栈溢出观察（见 demo/README，慎用） | **5.3.6**、**5.7.2** |
+| **demo04** | 故意堆泄漏 | **5.4.3**、**5.6.1**、**5.7.5** |
+| **demo05** | 静态局部 vs 局部 | **5.3.5** |
+| **demo06** | 工具链合练：`maps`/`mtrace`/core（命令行） | **5.2**、**5.6.3**、**5.7.2** |
+
+**demo06 参考**（无独立源文件）：
+
+```bash
+MALLOC_TRACE=/tmp/m.log ./demo04_heap_leak; cat /tmp/m.log | tail
+ulimit -c unlimited; ./demo04_heap_leak   # 配合 SIG 实验
+pmap -x $$
+```
+
+## 考核要点
+
+1. 画出进程 **五段** 并说明与 **ELF 段**、`/proc/maps` 的对应  
+2. 写出 ARM 函数调用 **入栈/出栈** 序列；解释 **`bl` 与 LR**  
+3. 用 GDB 对 `demo02` 执行 **`bt`、`info registers`、`x/16wx $sp`**  
+4. 对比 **静态局部** 与 **栈局部** 的存储与生命周期（**demo05**）  
+5. 说明 glibc **chunk**、**brk vs mmap**、**double free** 后果  
+6. 口述 **mmap** 映射文件与 **MMIO 设备** 的用户态步骤  
+7. 用 **Valgrind** 解读 `definitely lost`；简述 **mtrace** 用法  
+8. 配置 **core dump** 并用 GDB **`bt full`** 分析 SIGSEGV  
+9. 列举嵌入式 **栈/堆** 三条安全规则（无 MMU 场景）  
+10. 对比 **kmalloc** / **DPDK rte_malloc** 与 glibc `malloc` 的使用场景  
+
+## 前后章节
+
+| 方向 | 章节 |
+|------|------|
+| 前置 | **ch01** 工具、**ch03** ARM 汇编、**ch04** 编译链接 ELF |
+| 后置 | **ch06** GNU C 扩展；**ch07** 指针；**ch10** OS/多任务 |
+
 ## 小节
 
 - [5.1 程序运行的「马甲」：进程](./5.1-程序运行的-马甲-进程.md)
