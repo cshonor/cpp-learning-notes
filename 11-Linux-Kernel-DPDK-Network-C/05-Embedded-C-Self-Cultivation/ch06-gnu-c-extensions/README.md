@@ -1,5 +1,103 @@
 # 第 6 章 GNU C 编译器扩展语法精讲
 
+**GNU C Extensions for Kernel, Bootloader & DPDK**
+
+## 本章目标
+
+分清 **ISO C99/C11** 与 **GNU 扩展**；掌握 **`__attribute__`**（packed/aligned/section/weak/format/noinline 等）、**语句表达式**、**typeof/container_of**、**零长度数组**、**指定初始化**、**inline/builtins**、**可变参宏**。能读 **Linux 内核 / U-Boot / DPDK** 头文件宏，并编写带 **format 检查** 的日志与 **weak hook** 默认实现。衔接 **ch05 堆布局**、**ch07 指针**、**ch08 位操作**。
+
+## 前置依赖
+
+| 章节 | 内容 |
+|------|------|
+| **[ch01](../ch01-tools-of-the-trade/)** | `gcc`、`make`、基本命令行 |
+| **[ch04](../ch04-compile-link-install-run/)** | 编译链接、ELF 段、符号表、`nm`/`readelf` |
+| **[ch05](../ch05-memory-stack-management/)** | 堆 `malloc`、结构体布局、对齐概念 |
+
+## 环境
+
+- **编译器**：GCC 或 Clang，**`-std=gnu11`**（与内核一致）
+- **工具**：`gcc -E`（预处理）、`objdump`、`readelf`、`nm`
+- **拓展**：内核头或 **demo/**（由课程提供，见下）
+- **可选**：`-Wall -Wformat=2 -Wpedantic` 对比标准/扩展差异
+
+## 快速操作 Demo
+
+```bash
+cd 11-Linux-Kernel-DPDK-Network-C/05-Embedded-C-Self-Cultivation/ch06-gnu-c-extensions/demo
+
+make all
+
+# packed 布局与 sizeof
+./demo01_packed
+
+# section 符号与段
+./demo02_section
+readelf -S demo02_section
+nm demo02_section | grep -E 'init|boot|early'
+
+# weak 覆盖
+./demo03_weak_default
+./demo03_weak_board
+
+# constructor 先于 main
+./demo04_constructor
+
+# 零长度数组 / FAM
+./demo05_flex_array
+
+# 日志宏 + format 检查
+gcc -Wall -Wformat=2 -o demo06 demo06_log_macro.c && ./demo06
+
+# 内联汇编读寄存器（ARM 示例视平台而定）
+./demo07_register_asm
+
+make clean
+```
+
+## 六大知识模块
+
+| 模块 | 目录 | 核心 |
+|------|------|------|
+| **1 标准与扩展** | **6.1** | C89–C23 演进；`-std=`；GNU 扩展地图 |
+| **2 数据初始化** | **6.2**、**6.5** | 指定初始化；零长度数组 / FAM |
+| **3 宏与类型** | **6.3**、**6.4**、**6.12** | 语句表达式；typeof；container_of；`##__VA_ARGS__` |
+| **4 链接与布局** | **6.6**、**6.7**、**6.9** | section；aligned/packed；weak/alias |
+| **5 函数与诊断** | **6.8**、**6.10** | format 属性；inline/noinline |
+| **6 编译器内建** | **6.11** | `__builtin_constant_p`；expect；likely/unlikely |
+
+## Demo 清单
+
+| Demo | 内容 | 对应小节 |
+|------|------|----------|
+| **demo01** | `packed` 结构体布局 | **6.7.4**、**6.7.2** |
+| **demo02** | `section` 自定义段 | **6.6.2**、**6.6.3** |
+| **demo03** | `weak` 默认与板级覆盖 | **6.9.1–6.9.3** |
+| **demo04** | `constructor` 初始化顺序 | **6.6.1** |
+| **demo05** | 零长度数组动态分配 | **6.5.2** |
+| **demo06** | 日志宏 + `format` | **6.8.3**、**6.12** |
+| **demo07** | `register` + `asm` 读 CPSR | **6.11.2**、**6.6.1** |
+
+## 考核要点
+
+1. 解释 **`-std=c11`** 与 **`-std=gnu11`** 对语句表达式、零长度数组的影响  
+2. 写出 **`container_of` 指针运算** 并说明 `offsetof` 作用  
+3. 对比 **FAM** 与 **指针成员** 的分配与序列化场景（**6.5.4**）  
+4. 用 **`readelf`/`nm`** 定位 **section 属性** 放置的符号（**demo02**）  
+5. 说明 **`packed` 与 `aligned`** 同时使用时可能的对齐陷阱  
+6. 实现带 **`format(printf,m,n)`** 的两层日志宏（固定参 + `...`）  
+7. 描述 **weak 符号** 链接规则及与强符号冲突行为（**demo03**）  
+8. 对比 **inline 函数** 与 **语句表达式宏** 的优缺点  
+9. 解释 **`likely`/`unlikely`** 与 **`__builtin_expect`** 的作用  
+10. 写出 **`LOG(fmt, ...)`** 使用 **`##__VA_ARGS__`** 的原因，并列举内核/DPDK 实例  
+
+## 前后章节
+
+| 方向 | 章节 |
+|------|------|
+| 前置 | **ch04** 编译链接 ELF；**ch05** 内存对齐与堆 |
+| 后置 | **ch07** 指针；**ch08** 位操作；**ch09** 预处理；**ch10** OS |
+
 ## 小节
 
 - [6.1 C语言标准和编译器](./6.1-c-standard/6.1-C语言标准和编译器.md)
