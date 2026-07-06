@@ -2,6 +2,37 @@
 
 按推荐阅读顺序整理，笔记与代码对应根目录下各书籍子目录。
 
+## 00 · C 语言 / HFT 数据面（优先）
+
+面向 **DPDK、内核网络、用户态数据面** —— **先啃 C，再按需补 C++**。目录排在 **01-C++Primer 之前**。
+
+| 入口 | 说明 |
+|------|------|
+| **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)** | 5 本 C（内部分 `01–05`）+ [HFT 导读](./00-Linux-Kernel-DPDK-Network-C/00-hft-learning-path/) |
+| [根目录 HFT 路线说明](#hft--低延迟推荐顺序) | 阶段 A/B/C 总览 |
+
+```text
+阶段 A  C 基础（00 内 01→05）
+  01 K&R → 02 C和指针 → 03 陷阱与缺陷 → 04 专家编程 → 05 GNU-C
+        ↓
+阶段 B  系统与网络实战
+  Linux socket/epoll、DPDK 官方文档与 demo、抓包与协议
+        ↓
+阶段 C  C++ 按需（策略层 / 框架）
+  04 Modern C++ → 08 并发 → 09/10 C++17/20 → 13 性能工程（可选）
+```
+
+### HFT / 低延迟推荐顺序
+
+| 优先级 | 目录 | 说明 |
+|--------|------|------|
+| **必学** | [00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/) | C 数据面核心 |
+| 高 | [08-Cpp-Concurrency](./08-Cpp-Concurrency/) | 多线程、锁、内存序 |
+| 中 | [04-Effective-Modern-C++](./04-Effective-Modern-C++/) | 现代 C++，写策略/业务时补 |
+| 按需 | `13-Modern-C++-Performance-Engineering` | 低延迟、无锁、CPU 亲和（见下方可选拓展） |
+
+> 通用 C++ 主线（01–10）仍保留；不走 HFT 时可按下方 **C++ 学习顺序** 推进。
+
 ## C++ 主线（01–10）
 
 | 顺序 | 目录 | 书籍 | 侧重 |
@@ -17,13 +48,10 @@
 | 9 | [09-C++17-The-Complete-Guide](./09-C++17-The-Complete-Guide/) | 《C++17 - The Complete Guide》（Josuttis） | 结构化绑定、折叠表达式、并行 STL、`string_view` 等 C++17 过渡特性 |
 | 10 | [10-C++20-The-Complete-Guide](./10-C++20-The-Complete-Guide/) | 《C++20 - The Complete Guide》（Josuttis） | Concepts、Modules、Coroutines、Ranges 等 C++20 标准 |
 
-## C 语言 · Linux 内核 / DPDK / 网络服务（11）
+## C 语言学习顺序
 
-| 顺序 | 目录 | 说明 |
-|------|------|------|
-| 11 | [11-Linux-Kernel-DPDK-Network-C](./11-Linux-Kernel-DPDK-Network-C/) | 5 本 C 书（内部分 `01–05`），面向内核、DPDK、Linux 网络服务 |
-
-详见 [11-Linux-Kernel-DPDK-Network-C/README.md](./11-Linux-Kernel-DPDK-Network-C/README.md)。
+见 **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)**：  
+[00 HFT 导读](./00-Linux-Kernel-DPDK-Network-C/00-hft-learning-path/) → 阶段 1（01–04）→ 阶段 2（05 GNU-C）→ 内核 / DPDK / 网络源码。
 
 ## C++ 学习顺序
 
@@ -32,15 +60,12 @@
 3. 读 **09-C++17-The-Complete-Guide**：结构化绑定、折叠表达式、并行 STL、`string_view` 等——HFT 技术栈里 17→20 的过渡基线
 4. 最后切入 **10-C++20-The-Complete-Guide**，理解 C++20 是对 C++17 的升级拓展（Concepts、Ranges、Coroutines 等）
 
-## C 语言学习顺序
-
-见 **11-Linux-Kernel-DPDK-Network-C**：阶段 1（01–04）→ 阶段 2（05 GNU-C）→ 内核 / DPDK / 网络源码
-
 ## 学习提示
 
+- **HFT / 数据面**：优先 **00** + `00/01–05`；C++ 在能写策略后再补
 - **C++ 经典与现代**：Effective 系列 + Modern C++ 衔接；**原理 > 语法版本**
-- **C 的定位**：为 Linux 内核、DPDK、网络数据面服务；有 C++ 基础后再学 C 更高效
-- **对象模型**：`07-Cpp-Object-Model/` 与 `11-.../02-Pointers-on-C/` 对照理解内存布局
+- **C 的定位**：Linux 内核、DPDK、网络数据面；HFT 建议 **C 在前**
+- **对象模型**：`07-Cpp-Object-Model/` 与 `00-.../02-Pointers-on-C/` 对照理解内存布局
 - **全程保持**：笔记与代码写在对应书籍目录下，方便按书复盘
 
 ## 可选拓展（量化 / 低延迟方向）
