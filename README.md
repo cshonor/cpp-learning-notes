@@ -8,7 +8,7 @@
 
 | 入口 | 说明 |
 |------|------|
-| **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)** | 5 本 C（内部分 `01–05`）+ [HFT 导读](./00-Linux-Kernel-DPDK-Network-C/00-hft-learning-path/) |
+| **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)** | 5 本 C（内部分 `01–05`），HFT 数据面核心 |
 | [根目录 HFT 路线说明](#hft--低延迟推荐顺序) | 阶段 A/B/C 总览 |
 
 ```text
@@ -50,8 +50,7 @@
 
 ## C 语言学习顺序
 
-见 **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)**：  
-[00 HFT 导读](./00-Linux-Kernel-DPDK-Network-C/00-hft-learning-path/) → 阶段 1（01–04）→ 阶段 2（05 GNU-C）→ 内核 / DPDK / 网络源码。
+见 **[00-Linux-Kernel-DPDK-Network-C](./00-Linux-Kernel-DPDK-Network-C/)**：阶段 1（01–04）→ 阶段 2（05 GNU-C）→ 内核 / DPDK / 网络源码。
 
 ## C++ 学习顺序
 
