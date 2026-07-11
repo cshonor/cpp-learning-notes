@@ -1,8 +1,10 @@
 # 附录 B 标准库
 
+K&R 附录 B 各标准头文件速查；与 ch01–ch08 示例中的 `#include` 对应。
+
 ## 小节
 
-- [B.1 输入与输出stdio.h](./B.1-输入与输出stdio.h.md)
+- [B.1 输入与输出 `<stdio.h>`](./B.1-输入与输出stdio.h.md) — `printf`、`stdin/stdout`、`FILE`、`EOF`
 - [B.2 字符类别测试ctype.h](./B.2-字符类别测试ctype.h.md)
 - [B.3 字符串函数string.h](./B.3-字符串函数string.h.md)
 - [B.4 数学函数math.h](./B.4-数学函数math.h.md)
