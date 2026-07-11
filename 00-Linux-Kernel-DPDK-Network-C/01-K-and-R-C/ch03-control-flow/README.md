@@ -21,6 +21,6 @@
 - [3.4 switch 语句](./3.4-switch语句.md) — `case` 仅整型常量、字符转码值、字符串/浮点不行、与其他语言对比、穿透与 break
 - **`while` 条件里的 `i++`** —— 先判断、副作用立刻发生；与 `++i`、`for` 步进不等价（见 3.5）
 - [3.5 while 循环与 for 循环](./3.5-while循环与for循环.md) — 执行顺序、`i++`/`++i` 在条件中的差异、与 `for` 等价写法
-- [3.6 do-while 循环](./3.6-do-while循环.md)
+- [3.6 do-while 循环](./3.6-do-while循环.md) — 先体后判、至少一次；菜单、输入重试；宏 `do{}while(0)`
 - [3.7 break 与 continue](./3.7-break语句与continue语句.md)
 - [3.8 goto 语句与标号](./3.8-goto语句与标号.md)
