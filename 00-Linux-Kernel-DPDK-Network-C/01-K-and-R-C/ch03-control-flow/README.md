@@ -22,5 +22,5 @@
 - **`while` 条件里的 `i++`** —— 先判断、副作用立刻发生；与 `++i`、`for` 步进不等价（见 3.5）
 - [3.5 while 循环与 for 循环](./3.5-while循环与for循环.md) — 执行顺序、`i++`/`++i` 在条件中的差异、与 `for` 等价写法
 - [3.6 do-while 循环](./3.6-do-while循环.md) — 先体后判、至少一次；菜单、输入重试；宏 `do{}while(0)`
-- [3.7 break 与 continue](./3.7-break语句与continue语句.md)
+- [3.7 break 与 continue](./3.7-break语句与continue语句.md) — 嵌套循环只作用于最近一层；`for` 中 continue 仍步进
 - [3.8 goto 语句与标号](./3.8-goto语句与标号.md)
