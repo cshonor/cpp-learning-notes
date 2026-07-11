@@ -18,7 +18,7 @@
 - [3.1 语句与程序块](./3.1-语句与程序块.md) — 复合语句、`{}` 打包、块作用域
 - [3.2 if-else 语句](./3.2-if-else语句.md) — 非 0 即真、指针判空、`else` 就近匹配
 - [3.3 else-if 多分支结构](./3.3-else-if语句.md)
-- [3.4 switch 语句](./3.4-switch语句.md) — case 整型常量、穿透与 break、`switch` vs `else if`
+- [3.4 switch 语句](./3.4-switch语句.md) — `case` 仅整型常量、字符转码值、字符串/浮点不行、与其他语言对比、穿透与 break
 - [3.5 while 循环与 for 循环](./3.5-while循环与for循环.md)
 - [3.6 do-while 循环](./3.6-do-while循环.md)
 - [3.7 break 与 continue](./3.7-break语句与continue语句.md)
