@@ -118,7 +118,7 @@ int main(void)
 
 ## 与后续衔接
 
-- **ch01 1.1–1.10**：`printf`、`getchar`、最长行 — **`printf` 详解**：[1.1 补充](../ch01-introduction/1.1-补充-printf格式与安全.md)
+- **ch01 1.1–1.10**：`printf`、`getchar`、最长行 — **`printf` 详解**：[1.1.2](../ch01-introduction/1.1.2-printf格式与安全.md)
 - **ch07**：`fopen`、`setvbuf`、`sprintf` 族
 - **ch08**：`read`/`write` 与 stdio 对比
 - **附录 B**：`stdlib.h`、`string.h` 等并列标准库

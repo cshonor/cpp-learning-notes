@@ -42,6 +42,6 @@
 
 ## 小节
 
-- [8.1 一维数组](./8.1-一维数组/8.1-一维数组.md)（8.1.1–8.1.11）
-- [8.2 多维数组](./8.2-多维数组/8.2-多维数组.md)（8.2.1–8.2.7）
+- [8.1 一维数组](./8.1-one-dimensional-arrays/8.1-one-dimensional-arrays.md)（8.1.1–8.1.11）
+- [8.2 多维数组](./8.2-multidimensional-arrays/8.2-multidimensional-arrays.md)（8.2.1–8.2.7）
 - [8.3 指针数组](./8.3-指针数组.md)

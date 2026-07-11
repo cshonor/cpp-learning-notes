@@ -53,5 +53,5 @@
 ## 小节
 
 - [12.1 链表](./12.1-链表.md)
-- [12.2 单链表](./12.2-单链表/12.2-单链表.md)
-- [12.3 双链表](./12.3-双链表/12.3-双链表.md)
+- [12.2 单链表](./12.2-singly-linked-lists/12.2-singly-linked-lists.md)
+- [12.3 双链表](./12.3-doubly-linked-lists/12.3-doubly-linked-lists.md)

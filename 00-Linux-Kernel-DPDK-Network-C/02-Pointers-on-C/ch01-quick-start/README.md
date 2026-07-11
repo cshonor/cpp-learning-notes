@@ -40,11 +40,11 @@
 
 ## 小节
 
-- [1.1 简介](./1.1-简介/1.1-简介.md)
-  - [1.1.1 空白和注释](./1.1-简介/1.1.1-空白和注释.md)
-  - [1.1.2 预处理指令](./1.1-简介/1.1.2-预处理指令.md)
-  - [1.1.3 main 函数](./1.1-简介/1.1.3-main函数.md)
-  - [1.1.4 read_column_numbers 函数](./1.1-简介/1.1.4-read_column_numbers函数.md)
-  - [1.1.5 rearrange 函数](./1.1-简介/1.1.5-rearrange函数.md)
+- [1.1 简介](./1.1-introduction/1.1-introduction.md)
+  - [1.1.1 空白和注释](./1.1-introduction/1.1.1-空白和注释.md)
+  - [1.1.2 预处理指令](./1.1-introduction/1.1.2-预处理指令.md)
+  - [1.1.3 main 函数](./1.1-introduction/1.1.3-main函数.md)
+  - [1.1.4 read_column_numbers 函数](./1.1-introduction/1.1.4-read_column_numbers函数.md)
+  - [1.1.5 rearrange 函数](./1.1-introduction/1.1.5-rearrange函数.md)
 - [1.2 补充说明](./1.2-补充说明.md)
 - [1.3 编译](./1.3-编译.md)
