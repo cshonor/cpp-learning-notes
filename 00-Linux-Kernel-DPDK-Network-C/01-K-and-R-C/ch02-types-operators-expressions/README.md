@@ -20,6 +20,7 @@ C 的底层核心：类型如何在内存中存储、表达式如何求值、运
   - [2.2 补充 · limits.h / stdint.h / float.h 速查](./2.2-补充-limits-stdint-float.h速查.md)
   - [2.2 补充 · limits.h 完整详解](./2.2-补充-limits.h详解.md)
   - [2.2 补充 · stdint.h 完整详解](./2.2-补充-stdint.h详解.md)
+  - [2.2 补充 · inttypes.h 完整详解](./2.2-补充-inttypes.h详解.md)
 - [2.3 常量](./2.3-常量.md)
 - [2.4 声明](./2.4-声明.md)
 - [2.5 算术运算符](./2.5-算术运算符.md)
