@@ -4,7 +4,7 @@
 
 ## 本章讲什么
 
-全书**底层收官**：虚拟地址空间、栈帧 ABI、**brk/mmap** 堆、crt0 启动、静/动态链接、缓存行/大页、信号与 gdb/valgrind。打通 **C 代码 ↔ OS ↔ CPU**。
+全书**底层收官**：虚拟地址空间、栈帧 ABI、**brk/mmap** 堆、crt0 启动、静/动态链接、缓存行/大页、信号与 gdb/valgrind、**ELF 二进制静态分析（nm/readelf/objdump）**。打通 **C 代码 ↔ OS ↔ CPU**。
 
 ## 学习重点
 
@@ -63,3 +63,9 @@ ch01–ch17 语法、内存、IO、ADT → 本章映射到 **ELF、VMA、ABI、s
 - [18.1 判断运行时环境](./18.1-determining-runtime-environment/18.1-determining-runtime-environment.md)
 - [18.2 C 和汇编语言的接口](./18.2-C和汇编语言的接口.md)
 - [18.3 运行时效率](./18.3-运行时效率.md)
+- [18.4 ELF 文件回顾：sections vs segments](./18.4-ELF文件回顾.md)
+- [18.5 nm：符号表查看](./18.5-nm符号表查看.md)
+- [18.6 readelf：ELF 结构全景](./18.6-readelf-ELF结构全景.md)
+- [18.7 objdump：反汇编与段内容](./18.7-objdump反汇编.md)
+- [18.8 实战案例：DPDK 与内核模块](./18.8-实战案例.md)
+- [18.9 静态分析 vs 动态调试边界](./18.9-静态分析vs动态调试.md)
